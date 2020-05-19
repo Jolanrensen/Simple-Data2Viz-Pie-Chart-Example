@@ -66,10 +66,10 @@ viz {
            translate(x = 150.0, y = 300.0)
         }
         
-        // for each arcParam (with data) build an arc using a new path given color, stroke etc
-        arcParams.forEach {
-            arcBuilder.buildArcForDatum(it.data!!, path {
-                fill = colorOf(it.data!!)
+        // for each data item (datum) build an arc using a new path given color, stroke etc
+        data.forEach {
+            arcBuilder.buildArcForDatum(it, path {
+                fill = colorOf(it)
                 stroke = Web.black
                 strokeWidth = 2.0
             })
